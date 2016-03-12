@@ -143,7 +143,7 @@ master.add(ReTransducer(r'\bČSN( )\d{2}( |&nbsp;)\d{4}\b', {1: r'&nbsp;', 2: r'
                         examples=['ČSN 01 6910']),
            [lang_cs, prirucka, abbreviation, acronym])
 
-master.add(WordsNbspSubstituter([r'\b(?:[Tt]j|[Tt]zv|[Tt]zn|[Nn]apř)\.', r'\w'], 'cs.acronym.tjtzvtznnapr',
+master.add(WordsNbspSubstituter([r'\b(?:[Tt]j|[Tt]zv|[Tt]zn|[Nn]apř)\.', r'\w'], 'cs.acronym.tj_tzv_tzn_napr',
                                 description='The acronym of "to je", "takzvaný", "to znamená" or "například" followed by a word',
                                 examples=['tj. člověk', 'tzv. člověk', 'tzn. člověk', 'např. člověk']),
            [lang_cs, prirucka, abbreviation, acronym])
