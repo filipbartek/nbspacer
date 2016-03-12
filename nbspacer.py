@@ -25,8 +25,9 @@ Alternatives:
 Sources of inspiration:
 * http://prirucka.ujc.cas.cz/?id=880
 * http://www.chicagomanualofstyle.org/qanda/data/faq/topics/SpecialCharacters/faq0003.html
-"""
 
+Big thanks go to the maintainers of Prirucka for compiling a clear and reasonable set of relevant guidelines.
+"""
 
 # TODO: Support command line options:
 # user-defined patterns
