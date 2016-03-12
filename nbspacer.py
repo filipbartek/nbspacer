@@ -52,6 +52,9 @@ if __name__ == '__main__':
     assert cs
     assert en
 
+    gettext.bindtextdomain('argparse', 'locale')
+    gettext.textdomain('argparse')
+
     _ = gettext.translation('nbspacer', localedir='locale', fallback=True).gettext
 
     # Initialize the parser
