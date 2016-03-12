@@ -25,17 +25,17 @@ vlna = master.add_group('vlna', _('Inspired by the LaTeX package vlna'))
 
 # Transducers:
 
-master.add(WordsNbspSubstituter([r'\b[ksvzKSVZ]', r'\w'], 'ksvz',
+master.add(WordsNbspSubstituter([r'\b[ksvzKSVZ]', r'\w'], 'cs.ksvz',
                                 description=_('Non-syllabic preposition and the following word'),
                                 examples=['k mostu', 's bratrem', 'v Plzni', 'z nádraží']),
            [lang_cs, prirucka, preposition, vlna])
 
-ou = WordsNbspSubstituter([r'\b[ouOU]', r'\w'], 'ou')
+ou = WordsNbspSubstituter([r'\b[ouOU]', r'\w'], 'cs.ou')
 ou.description = _('One-letter syllabic preposition and the following word')
 ou.examples = ['u babičky', 'o páté']
 master.add(ou, [lang_cs, prirucka, preposition])
 
-ai = WordsNbspSubstituter([r'\b[aiAI]', r'\w'], 'ai')
+ai = WordsNbspSubstituter([r'\b[aiAI]', r'\w'], 'cs.ai')
 ai.description = _('One-letter conjunction and the following word')
 ai.examples = ['máma a táta', 'I já jsem tam byl.']
 master.add(ai, [lang_cs, prirucka, conjunction])
