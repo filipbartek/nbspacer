@@ -1,0 +1,3 @@
+[submodule "argparse-cs"]
+	path = argparse-cs
+	url = https://github.com/filipbartek/argparse-cs.git
