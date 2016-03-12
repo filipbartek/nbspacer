@@ -49,8 +49,8 @@ if __name__ == '__main__':
     import transducer
 
     # Prevent the cs and en imports from being optimized away
-    assert cs.t
-    assert en.t
+    assert cs
+    assert en
 
     _ = gettext.translation('nbspacer', localedir='locale', fallback=True).gettext
 
