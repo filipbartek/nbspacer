@@ -27,20 +27,6 @@ Sources of inspiration:
 * http://www.chicagomanualofstyle.org/qanda/data/faq/topics/SpecialCharacters/faq0003.html
 """
 
-import argparse
-import gettext
-import sys
-
-import cs
-import en
-import transducer
-
-# Prevent the cs and en imports from being optimized away
-assert cs.t
-assert en.t
-
-t = gettext.translation('nbspacer', localedir='locale', fallback=True)
-_ = t.gettext
 
 # TODO: Support command line options:
 # user-defined patterns
@@ -54,6 +40,20 @@ _ = t.gettext
 # TODO: Enable all the transducers by default
 
 if __name__ == '__main__':
+    import argparse
+    import gettext
+    import sys
+
+    import cs
+    import en
+    import transducer
+
+    # Prevent the cs and en imports from being optimized away
+    assert cs.t
+    assert en.t
+
+    _ = gettext.translation('nbspacer', localedir='locale', fallback=True).gettext
+
     # Initialize the parser
     description = _('Replaces space characters with &nbsp; where appropriate in a HTML document. ' \
                     'The replacement functionality is divided in transducers. ' \
