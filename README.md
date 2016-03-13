@@ -36,7 +36,7 @@ To enable the Czech translation at runtime, set the environment variable `LANGUA
 ## Special thanks
 
 Most of the Czech language transducers are inspired by the
-[corresponding article](http://prirucka.ujc.cas.cz/?id=880)
+[relevant article](http://prirucka.ujc.cas.cz/?id=880)
 in [Internet Language Reference Book](http://prirucka.ujc.cas.cz/en)
 created by [The Institute of the Czech Language of the Academy of Sciences of the Czech Republic](http://www.ujc.cas.cz/en/).
 I would like to thank the authors of the reference book for compiling a clear and reasonable set of guidelines.
