@@ -47,8 +47,8 @@ if __name__ == '__main__':
                     'The transducers are grouped into named groups.')
     parser = argparse.ArgumentParser(description=description, add_help=False)
     parser.add_argument('-h', '--help', action='store_true', help=_('show this help message and exit'))
-    parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin, help=_('input file'))
-    parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout, help=_('ouptut file'))
+    parser.add_argument('infile', nargs='?', type=argparse.FileType('r', encoding='utf_8'), default=sys.stdin, help=_('input file'))
+    parser.add_argument('outfile', nargs='?', type=argparse.FileType('w', encoding='utf_8'), default=sys.stdout, help=_('ouptut file'))
     # parser.add_argument('--encoding', nargs=1, type=str, default='utf_8')
     transducer.master.add_arguments(parser)
 
