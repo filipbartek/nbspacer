@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nbspacer 1.0\n"
-"POT-Creation-Date: 2016-03-13 00:48+CET\n"
+"POT-Creation-Date: 2016-03-13 01:45+CET\n"
 "PO-Revision-Date: 2016-03-12 19:00+CET\n"
 "Last-Translator: Filip Bártek <filip.bartek@hotmail.com>\n"
 "Language-Team: Czech <filip.bartek@hotmail.com>\n"
@@ -18,6 +18,10 @@ msgstr ""
 #: cs.py:16
 msgid "Czech language"
 msgstr "Český jazyk"
+
+#: cs.py:17
+msgid "Internet Language Reference Book"
+msgstr "Internetová jazyková příručka"
 
 #: cs.py:18
 msgid "prepositions"
@@ -103,7 +107,7 @@ msgstr "Poměr"
 msgid "English language"
 msgstr "Anglický jazyk"
 
-#: nbspacer.py:62
+#: nbspacer.py:44
 msgid ""
 "Replaces space characters with &nbsp; where appropriate in a HTML document. "
 "The replacement functionality is divided in transducers. Every transducer "
@@ -111,51 +115,51 @@ msgid ""
 "into named groups."
 msgstr ""
 
-#: nbspacer.py:67
+#: nbspacer.py:49
 msgid "show this help message and exit"
 msgstr "zobraz tuto nápovědu a ukonči program"
 
-#: nbspacer.py:68
+#: nbspacer.py:50
 msgid "input file"
 msgstr "vstupní soubor"
 
-#: nbspacer.py:69
+#: nbspacer.py:51
 msgid "ouptut file"
 msgstr "výstupní soubor"
 
-#: transducer.py:28
+#: transducer.py:29
 msgid "Transducer \"{0}\":\n"
 msgstr "Převodník \"{0}\":\n"
 
-#: transducer.py:30 transducer.py:184
+#: transducer.py:31 transducer.py:185
 msgid "  Description: {0}\n"
 msgstr "  Popis: {0}\n"
 
-#: transducer.py:32
+#: transducer.py:33
 msgid "  Examples:\n"
 msgstr "  Příklady:\n"
 
-#: transducer.py:101
+#: transducer.py:102
 msgid "  Pattern: {0}\n"
 msgstr "  Šablona: {0}\n"
 
-#: transducer.py:102
+#: transducer.py:103
 msgid "  Replacement: {0}\n"
 msgstr "  Náhrada: {0}\n"
 
-#: transducer.py:103
+#: transducer.py:104
 msgid "  Align: {0}\n"
 msgstr "  Zarovnání: {0}\n"
 
-#: transducer.py:104
+#: transducer.py:105
 msgid "  Fixpoint: {0}\n"
 msgstr "  Hledá pevný bod: {0}\n"
 
-#: transducer.py:182
+#: transducer.py:183
 msgid "Transducer group \"{0}\":\n"
 msgstr "Skupina \"{0}\":\n"
 
-#: transducer.py:185
+#: transducer.py:186
 msgid ""
 "  Transducers:\n"
 "    {0}"
@@ -163,7 +167,7 @@ msgstr ""
 "  Převodníky:\n"
 "    {0}"
 
-#: transducer.py:226
+#: transducer.py:227
 msgid ""
 "Enables the transducer group G. Combine with --help to show detailed "
 "information. Available groups: {0}"
@@ -171,7 +175,7 @@ msgstr ""
 "Zapne skupinu G. Doplňte --help pro zobrazení podrobností. Dostupné skupiny: "
 "{0}"
 
-#: transducer.py:231
+#: transducer.py:232
 msgid ""
 "Enables the transducer T. Combine with --help to show detailed information. "
 "Available transducers: {0}"

@@ -14,7 +14,7 @@ _ = gettext.translation(config.domain, localedir=config.localedir, fallback=True
 
 # Groups:
 lang_cs = master.add_group('cs', _('Czech language'))
-prirucka = master.add_group('prirucka', 'Internetová jazyková příručka')
+prirucka = master.add_group('prirucka', _('Internet Language Reference Book'))
 preposition = master.add_group('preposition', _('prepositions'))
 conjunction = master.add_group('conjunction', _('conjunctions'))
 number = master.add_group('number', _('numbers'))
