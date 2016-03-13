@@ -11,8 +11,9 @@ from queue import PriorityQueue
 
 from ordered_set import OrderedSet
 
-t = gettext.translation('nbspacer', localedir='locale', fallback=True)
-_ = t.gettext
+import config
+
+_ = gettext.translation(config.domain, localedir=config.localedir, fallback=True).gettext
 
 
 class Transducer(object):

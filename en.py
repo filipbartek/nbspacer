@@ -1,9 +1,9 @@
 import gettext
 
+import config
 from transducer import master, WordsNbspSubstituter
 
-t = gettext.translation('nbspacer', localedir='locale', fallback=True)
-_ = t.gettext
+_ = gettext.translation(config.domain, localedir=config.localedir, fallback=True).gettext
 
 # Groups:
 lang_en = master.add_group('en', _('English language'))

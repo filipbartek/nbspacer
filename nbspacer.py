@@ -46,6 +46,7 @@ if __name__ == '__main__':
     import sys
 
     import cs
+    import config
     import en
     import transducer
 
@@ -53,10 +54,10 @@ if __name__ == '__main__':
     assert cs
     assert en
 
-    gettext.bindtextdomain('argparse', 'locale')
+    gettext.bindtextdomain('argparse', config.localedir)
     gettext.textdomain('argparse')
 
-    _ = gettext.translation('nbspacer', localedir='locale', fallback=True).gettext
+    _ = gettext.translation(config.domain, localedir=config.localedir, fallback=True).gettext
 
     # Initialize the parser
     description = _('Replaces space characters with &nbsp; where appropriate in a HTML document. ' \

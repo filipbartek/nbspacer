@@ -1,9 +1,9 @@
 import gettext
 
+import config
 from transducer import WordsNbspSubstituter, DottedNbspSubstituter, ReTransducer, master
 
-t = gettext.translation('nbspacer', localedir='locale', fallback=True)
-_ = t.gettext
+_ = gettext.translation(config.domain, localedir=config.localedir, fallback=True).gettext
 
 # http://prirucka.ujc.cas.cz/?id=880
 
