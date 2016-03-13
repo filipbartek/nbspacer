@@ -18,12 +18,6 @@ I still recommend checking the result manually as some of the transducers may re
 * does not skip the content of the tag `<pre>`
 * requires [Python](https://www.python.org/) 3.5
 
-## Similar tools
-
-* [Automatic NBSP](https://wordpress.org/plugins/automatic-nbsp/) (HTML, Wordpress plugin)
-* [&amp;Nbsp; replacer](http://www.nedivse.cz/doplnovani-pevnych-mezer/) (HTML, web interface)
-* [vlna](http://ftp.linux.cz/pub/tex/local/cstug/olsak/vlna/) (LaTeX)
-
 ## Quick start
 
 Call `python3 nbspacer.py --help`.
@@ -33,14 +27,22 @@ Call `python3 nbspacer.py --help`.
 For the Czech translation to work, you must follow these steps:
 
 0. `git submodule update --init`
+(pull the Czech translation of the `argparse` module)
 0. `./nbspacer-cs-msgfmt.sh`
+(compile the Czech translation of `nbspacer` and `argparse`)
 
 To enable the Czech translation at runtime, set the environment variable `LANGUAGE` to the value `cs`.
 
 ## Special thanks
 
 Most of the Czech language transducers are inspired by the
-[corresponding article](http://prirucka.ujc.cas.cz/?id=880)
+[relevant article](http://prirucka.ujc.cas.cz/?id=880)
 in [Internet Language Reference Book](http://prirucka.ujc.cas.cz/en)
 created by [The Institute of the Czech Language of the Academy of Sciences of the Czech Republic](http://www.ujc.cas.cz/en/).
 I would like to thank the authors of the reference book for compiling a clear and reasonable set of guidelines.
+
+## Similar tools
+
+* [Automatic NBSP](https://wordpress.org/plugins/automatic-nbsp/) (HTML, Wordpress plugin)
+* [&amp;Nbsp; replacer](http://www.nedivse.cz/doplnovani-pevnych-mezer/) (HTML, web interface)
+* [vlna](http://ftp.linux.cz/pub/tex/local/cstug/olsak/vlna/) (LaTeX)
