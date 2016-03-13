@@ -255,6 +255,7 @@ class MasterTransducer(Transducer):
                     self.parser.exit()
                 self.selected.add(transducer)
         if len(self.selected) == 0:
+            # If no transducer is selected explicitly, all transducers are used.
             self.selected = self.transducers.values()
 
     def substitute(self, string, indices):

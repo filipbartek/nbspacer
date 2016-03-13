@@ -38,7 +38,6 @@ Big thanks go to the maintainers of Prirucka for compiling a clear and reasonabl
 # TODO: Enable the user to specify the encoding
 # TODO: Add tests
 # TODO: Account for <pre></pre>
-# TODO: Enable all the transducers by default
 
 if __name__ == '__main__':
     import argparse
