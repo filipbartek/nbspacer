@@ -27,7 +27,9 @@ Call `python3 nbspacer.py --help`.
 For the Czech translation to work, you must follow these steps:
 
 0. `git submodule update --init`
+(pull the Czech translation of the `argparse` module)
 0. `./nbspacer-cs-msgfmt.sh`
+(compile the Czech translation of `nbspacer` and `argparse`)
 
 To enable the Czech translation at runtime, set the environment variable `LANGUAGE` to the value `cs`.
 
