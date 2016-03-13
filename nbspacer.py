@@ -4,24 +4,6 @@
 nbspacer replaces spaces with &nbsp; in a HTML document where appropriate.
 Its main target language is Czech.
 
-nbspacer is:
-* HTML: only touches the content outside the tags enclosed in angle brackets
-* conservative: only changes the necessary characters
-* configurable: choose the transducers or transducer groups you like
-
-While I have tried my best to make the execution of the tool precise and predictable,
-I still recommend checking the result manually as some of the transducers may respond to false positives.
-
-Limitations:
-* the input and output file encoding is hardcoded to UTF-8
-* does not skip the content of the tag <pre>
-* requires Python 3.5
-
-Alternatives:
-* vlna
-* http://www.nedivse.cz/doplnovani-pevnych-mezer/
-* https://wordpress.org/plugins/automatic-nbsp/
-
 Sources of inspiration:
 * http://prirucka.ujc.cas.cz/?id=880
 * http://www.chicagomanualofstyle.org/qanda/data/faq/topics/SpecialCharacters/faq0003.html
