@@ -18,12 +18,6 @@ I still recommend checking the result manually as some of the transducers may re
 * does not skip the content of the tag `<pre>`
 * requires [Python](https://www.python.org/) 3.5
 
-## Similar tools
-
-* [Automatic NBSP](https://wordpress.org/plugins/automatic-nbsp/) (HTML, Wordpress plugin)
-* [&amp;Nbsp; replacer](http://www.nedivse.cz/doplnovani-pevnych-mezer/) (HTML, web interface)
-* [vlna](http://ftp.linux.cz/pub/tex/local/cstug/olsak/vlna/) (LaTeX)
-
 ## Quick start
 
 Call `python3 nbspacer.py --help`.
@@ -44,3 +38,9 @@ Most of the Czech language transducers are inspired by the
 in [Internet Language Reference Book](http://prirucka.ujc.cas.cz/en)
 created by [The Institute of the Czech Language of the Academy of Sciences of the Czech Republic](http://www.ujc.cas.cz/en/).
 I would like to thank the authors of the reference book for compiling a clear and reasonable set of guidelines.
+
+## Similar tools
+
+* [Automatic NBSP](https://wordpress.org/plugins/automatic-nbsp/) (HTML, Wordpress plugin)
+* [&amp;Nbsp; replacer](http://www.nedivse.cz/doplnovani-pevnych-mezer/) (HTML, web interface)
+* [vlna](http://ftp.linux.cz/pub/tex/local/cstug/olsak/vlna/) (LaTeX)
