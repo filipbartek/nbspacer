@@ -53,7 +53,7 @@ def main(args=None):
                         help=_('input file'))
     parser.add_argument('outfile', nargs='?', type=argparse.FileType('w', encoding='utf_8'), default=sys.stdout,
                         help=_('ouptut file'))
-    # parser.add_argument('--encoding', nargs=1, type=str, default='utf_8')
+    # TODO: parser.add_argument('--encoding', nargs=1, type=str, default='utf_8')
     transducer.master.add_arguments(parser)
 
     # Parse the command line arguments
