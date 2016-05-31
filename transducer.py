@@ -62,7 +62,7 @@ class Transducer(metaclass=ABCMeta):
         :param indices: the indices of characters of the string
         :return: a pair of string and indices
         """
-        raise NotImplementedError()
+        raise NotImplementedError()  # pragma: no cover
 
     def transduce_html(self, html):
         """
