@@ -1,10 +1,11 @@
 #!/usr/bin/python
 
 """
-nbspacer replaces spaces with &nbsp; in a HTML document where appropriate.
+:py:mod:`nbspacer` replaces spaces with ``&nbsp;`` in a HTML document where appropriate.
 Its main target language is Czech.
 
 Sources of inspiration:
+
 * http://prirucka.ujc.cas.cz/?id=880
 * http://www.chicagomanualofstyle.org/qanda/data/faq/topics/SpecialCharacters/faq0003.html
 
