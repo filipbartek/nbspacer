@@ -22,20 +22,21 @@ Big thanks go to the maintainers of Prirucka for compiling a clear and reasonabl
 # TODO: Add tests
 # TODO: Account for <pre></pre>
 
-if __name__ == '__main__':
-    import argparse
-    import gettext
-    import sys
+import argparse
+import gettext
+import sys
 
-    import cs
-    import config
-    import en
-    import transducer
+import config
+import cs
+import en
+import transducer
 
-    # Prevent the cs and en imports from being optimized away
-    assert cs
-    assert en
+# Prevent the cs and en imports from being optimized away
+assert cs
+assert en
 
+
+def main(args=None):
     gettext.bindtextdomain('argparse', config.localedir)
     gettext.textdomain('argparse')
 
@@ -56,13 +57,17 @@ if __name__ == '__main__':
     transducer.master.add_arguments(parser)
 
     # Parse the command line arguments
-    args = parser.parse_args()
-    transducer.master.configure(args)
+    namespace = parser.parse_args(args)
+    transducer.master.configure(namespace)
 
-    if args.help:
+    if namespace.help:
         parser.print_help()
         parser.exit()
 
-    transducer.master.process_file(args.infile, args.outfile)
-    args.infile.close()
-    args.outfile.close()
+    transducer.master.process_file(namespace.infile, namespace.outfile)
+    namespace.infile.close()
+    namespace.outfile.close()
+
+
+if __name__ == '__main__':
+    main()
