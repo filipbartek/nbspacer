@@ -311,7 +311,7 @@ class MasterTransducer(Transducer):
         :param args: command line arguments parsed by an :py:mod:`ArgumentParser`
         :param file: the file to print help string to
         """
-        self.selected.clear()
+        self.selected = OrderedSet()
         if args.group:
             for group_name in chain.from_iterable(args.group):
                 group = self.groups[group_name]
