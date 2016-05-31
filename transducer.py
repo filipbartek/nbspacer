@@ -225,12 +225,6 @@ class TransducerGroup(Transducer):
     def add(self, transducer):
         self.transducers.append(transducer)
 
-    def help(self):
-        transducer_names = ', '.join((transducer.name for transducer in self.transducers))
-        if self.description:
-            return '{0}: {1}'.format(self.description, transducer_names)
-        return transducer_names
-
     @overrides
     def print_help(self, file=sys.stdout):
         file.write(_('Transducer group "{0}":\n').format(self.name))
