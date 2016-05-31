@@ -16,6 +16,7 @@ from itertools import chain
 from queue import PriorityQueue
 
 from ordered_set import OrderedSet
+from overrides import overrides
 
 import config
 
@@ -104,6 +105,7 @@ class ReTransducer(Transducer):
         self.align = align
         self.fixpoint = fixpoint
 
+    @overrides
     def print_help(self, file=sys.stdout):
         super().print_help(file)
         file.write(_('  Pattern: {0}\n').format(self.pattern))
@@ -111,6 +113,7 @@ class ReTransducer(Transducer):
         file.write(_('  Align: {0}\n').format(self.align))
         file.write(_('  Fixpoint: {0}\n').format(self.fixpoint))
 
+    @overrides
     def substitute(self, string, indices):
         result_string, indices = self.substitute_once(string, indices)
         if self.fixpoint:
@@ -164,6 +167,7 @@ class WordsNbspSubstituter(ReTransducer):
 
 
 class DottedNbspSubstituter(WordsNbspSubstituter):
+    @overrides
     def __init__(self, words, name=None, description=None, examples=None):
         words_iter = iter(words)
         head_word_dotted = r'\b{0}\.'.format(next(words_iter))
@@ -186,6 +190,7 @@ class TransducerGroup(Transducer):
             return '{0}: {1}'.format(self.description, transducer_names)
         return transducer_names
 
+    @overrides
     def print_help(self, file=sys.stdout):
         file.write(_('Transducer group "{0}":\n').format(self.name))
         if self.description:
@@ -193,6 +198,7 @@ class TransducerGroup(Transducer):
         file.write(_('  Transducers:\n    {0}').format('\n    '.join(map(str, self.transducers))))
         file.write('\n')
 
+    @overrides
     def substitute(self, string, indices):
         for transducer in self.transducers:
             string, indices = transducer.substitute(string, indices)
@@ -265,6 +271,7 @@ class MasterTransducer(Transducer):
             # If no transducer is selected explicitly, all transducers are used.
             self.selected = self.transducers.values()
 
+    @overrides
     def substitute(self, string, indices):
         for transducer in self.selected:
             string, indices = transducer.substitute(string, indices)
