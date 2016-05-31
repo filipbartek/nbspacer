@@ -1,0 +1,16 @@
+[
+  ["k mostu", "k&nbsp;mostu"],
+  ["k <b>mostu</b> ", "k&nbsp;<b>mostu</b> "],
+  ["k <b>mostu</b>", "k&nbsp;<b>mostu</b>"],
+  ["<b>k</b> mostu", "<b>k</b>&nbsp;mostu"],
+  ["s bratrem", "s&nbsp;bratrem"],
+  ["v Plzni", "v&nbsp;Plzni"],
+  ["z nádraží", "z&nbsp;nádraží"],
+  ["u babičky", "u&nbsp;babičky"],
+  ["o páté", "o&nbsp;páté"],
+  ["máma a táta", "máma a&nbsp;táta"],
+  ["I já jsem tam byl.", "I&nbsp;já jsem tam byl."],
+  ["2 500", "2&nbsp;500"],
+  ["1 000 000", "1&nbsp;000&nbsp;000"],
+  ["50 %", "50&nbsp;%"]
+]
