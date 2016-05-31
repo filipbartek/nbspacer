@@ -47,7 +47,7 @@ class Transducer(metaclass=ABCMeta):
     @abstractmethod
     def substitute(self, string, indices):
         """
-        Translates string.
+        Translates a string.
         :return: a pair of string and indices
         """
         raise NotImplementedError()
@@ -215,7 +215,7 @@ class MasterTransducer(Transducer):
 
     def add(self, transducer, groups=None):
         """
-        The transducers are guaranteed to run in the order in which they are added.
+        The transducers are guaranteed to execute in the order in which they are added.
         """
         assert isinstance(transducer, Transducer)
         name = transducer.name
