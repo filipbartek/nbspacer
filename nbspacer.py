@@ -68,6 +68,8 @@ def main(args=None):
     namespace.infile.close()
     namespace.outfile.close()
 
+    sys.exit(0)
+
 
 if __name__ == '__main__':
     main()
