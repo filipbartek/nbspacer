@@ -1,3 +1,8 @@
+"""
+This package several defines `Transducer` classes. The instances of `Transducer` can be used to transduce a HTML file
+using the method `process_file`.
+"""
+
 import gettext
 import heapq
 import itertools

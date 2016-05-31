@@ -1,3 +1,7 @@
+"""
+Importing this module adds Czech transducers to the master transducer `transducer.master`.
+"""
+
 import gettext
 
 import config

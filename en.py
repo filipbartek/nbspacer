@@ -1,3 +1,7 @@
+"""
+Importing this module adds English transducers to the master transducer `transducer.master`.
+"""
+
 import gettext
 
 import config
