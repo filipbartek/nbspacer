@@ -24,6 +24,10 @@ _ = gettext.translation(config.domain, localedir=config.localedir, fallback=True
 
 
 class Transducer(metaclass=ABCMeta):
+    """
+    The abstract base class for transducers
+    """
+
     def __init__(self, name=None, description=None, examples=None):
         self.name = name
         self.description = description
@@ -33,6 +37,11 @@ class Transducer(metaclass=ABCMeta):
         return self.name
 
     def print_help(self, file=sys.stdout):
+        """
+        Print a help string for this transducer into a file.
+
+        :param file: the file to write the help string to
+        """
         file.write(_('Transducer "{0}":\n').format(self.name))
         if self.description:
             file.write(_('  Description: {0}\n').format(self.description))
@@ -48,11 +57,20 @@ class Transducer(metaclass=ABCMeta):
     def substitute(self, string, indices):
         """
         Translates a string.
+
+        :param string: the string to be translated
+        :param indices: the indices of characters of the string
         :return: a pair of string and indices
         """
         raise NotImplementedError()
 
     def transduce_html(self, html):
+        """
+        Transduces a HTML formatted string.
+
+        :param html: a HTML formatted string
+        :return: the HTML string with the content transduced by this transducer
+        """
         # Load html
         inside_tag = False
         content_list = []
@@ -88,10 +106,20 @@ class Transducer(metaclass=ABCMeta):
         return ''.join((string for i, string in merged))
 
     def process_file(self, infile, outfile):
+        """
+        Transduces an input HTML file, writing to an output file.
+
+        :param infile: input HTML file
+        :param outfile: output HTML file
+        """
         outfile.write(self.transduce_html(infile.read()))
 
 
 class ReTransducer(Transducer):
+    """
+    Regular expression `Transducer`
+    """
+
     class Align(Enum):
         left = 'left'
         right = 'right'
@@ -159,6 +187,10 @@ class ReTransducer(Transducer):
 
 
 class WordsNbspSubstituter(ReTransducer):
+    """
+    Replaces spaces that separate a given sequence of words.
+    """
+
     def __init__(self, words, name=None, description=None, examples=None):
         words = list(words)
         pattern = '( )'.join(words)
@@ -167,6 +199,11 @@ class WordsNbspSubstituter(ReTransducer):
 
 
 class DottedNbspSubstituter(WordsNbspSubstituter):
+    """
+    Replaces spaces that separate a given sequence of abbreviations. Automatically terminates the abbreviations (words)
+    with periods.
+    """
+
     @overrides
     def __init__(self, words, name=None, description=None, examples=None):
         words_iter = iter(words)
@@ -177,6 +214,10 @@ class DottedNbspSubstituter(WordsNbspSubstituter):
 
 
 class TransducerGroup(Transducer):
+    """
+    A sequence of transducers
+    """
+
     def __init__(self, name, description=None):
         super().__init__(name=name, description=description)
         self.transducers = []
@@ -206,6 +247,10 @@ class TransducerGroup(Transducer):
 
 
 class MasterTransducer(Transducer):
+    """
+    A collection of transducers. This class is intended to be used as a singleton.
+    """
+
     def __init__(self):
         super().__init__([])
         self.transducers = OrderedDict()
@@ -215,6 +260,7 @@ class MasterTransducer(Transducer):
 
     def add(self, transducer, groups=None):
         """
+        Registers a `Transducer`.
         The transducers are guaranteed to execute in the order in which they are added.
         """
         assert isinstance(transducer, Transducer)
@@ -227,12 +273,24 @@ class MasterTransducer(Transducer):
             group.add(transducer)
 
     def add_group(self, name, description=None):
+        """
+        Creates and registers a transducer group.
+
+        :param name: the name of the group
+        :param description: the description of the group
+        :return: the constructed group instance
+        """
         assert name not in self.groups.keys(), 'Duplicit group "{0}"'.format(name)
         group = TransducerGroup(name, description)
         self.groups[name] = group
         return group
 
     def add_arguments(self, parser):
+        """
+        Registers command line arguments that control this `MasterTransducer` in an :py:mod:`ArgumentParser`.
+
+        :param parser: an :py:mod:`ArgumentParser`
+        """
         assert isinstance(parser, ArgumentParser)
         self.parser = parser
         group_names = list(self.groups.keys())
@@ -247,6 +305,12 @@ class MasterTransducer(Transducer):
                                 ', '.join(transducer_names)))
 
     def configure(self, args, file=sys.stdout):
+        """
+        Configures this `MasterTransducer` using the arguments parsed by an :py:mod:`ArgumentParser`.
+
+        :param args: command line arguments parsed by an :py:mod:`ArgumentParser`
+        :param file: the file to print help string to
+        """
         self.selected.clear()
         if args.group:
             for group_name in chain.from_iterable(args.group):
@@ -273,6 +337,9 @@ class MasterTransducer(Transducer):
 
     @overrides
     def substitute(self, string, indices):
+        """
+        Translates a string using the selected transducers.
+        """
         for transducer in self.selected:
             string, indices = transducer.substitute(string, indices)
         return string, indices
