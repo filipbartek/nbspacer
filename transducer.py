@@ -8,6 +8,7 @@ import heapq
 import itertools
 import re
 import sys
+from abc import abstractmethod, ABCMeta
 from argparse import ArgumentParser
 from collections import OrderedDict
 from enum import Enum
@@ -21,7 +22,7 @@ import config
 _ = gettext.translation(config.domain, localedir=config.localedir, fallback=True).gettext
 
 
-class Transducer(object):
+class Transducer(metaclass=ABCMeta):
     def __init__(self, name=None, description=None, examples=None):
         self.name = name
         self.description = description
@@ -42,6 +43,7 @@ class Transducer(object):
                 # After:
                 file.write('    +{0}\n'.format(self.transduce_html(before)))
 
+    @abstractmethod
     def substitute(self, string, indices):
         """
         Translates string.
