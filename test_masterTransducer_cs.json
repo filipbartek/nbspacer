@@ -2,6 +2,7 @@
   ["k mostu", "k&nbsp;mostu"],
   ["k <b>mostu</b> ", "k&nbsp;<b>mostu</b> "],
   ["k <b>mostu</b>", "k&nbsp;<b>mostu</b>"],
+  ["k <i><b>mostu</b></i>", "k&nbsp;<i><b>mostu</b></i>"],
   ["<b>k</b> mostu", "<b>k</b>&nbsp;mostu"],
   ["s bratrem", "s&nbsp;bratrem"],
   ["v Plzni", "v&nbsp;Plzni"],
