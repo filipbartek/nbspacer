@@ -42,6 +42,10 @@ class TestMasterTransducer(TestCase):
         cases = json.load(open('test_masterTransducer_cs.json'))
         self.transduce_assert(transducer.master, cases)
 
+    def test_cs_group(self):
+        cases = json.load(open('test_masterTransducer_cs.json'))
+        self.transduce_assert(cs.lang_cs, cases)
+
     @skip('This test is too strict.')
     def test_prirucka(self):
         self.configure_master()
