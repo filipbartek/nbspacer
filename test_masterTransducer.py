@@ -37,17 +37,6 @@ class TestMasterTransducer(TestCase):
             actual = self.transduce(t, input)
             self.assertEqual(expected, actual)
 
-    def test_ksvz(self):
-        self.configure_master(transducers=[['cs.ksvz']])
-        self.transduce_assert(transducer.master, [
-            ('k mostu', 'k&nbsp;mostu'),
-            ('s bratrem', 's&nbsp;bratrem'),
-            ('v Plzni', 'v&nbsp;Plzni'),
-            ('z nádraží', 'z&nbsp;nádraží'),
-            ('u babičky', 'u babičky'),
-            ('o páté', 'o páté')
-        ])
-
     def test_cs(self):
         self.configure_master(groups=[['cs']])
         cases = json.load(open('test_masterTransducer_cs.json'))
