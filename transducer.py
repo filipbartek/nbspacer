@@ -96,6 +96,8 @@ class Transducer(metaclass=ABCMeta):
                 tag = []
             content_list.append(c)
             i += 1
+        if tag:
+            tags[i] = ''.join(tag)
         content = ''.join(content_list)
         # Transduce
         content_transduced, indices = self.substitute(content, range(len(content)))
