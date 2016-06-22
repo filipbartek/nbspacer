@@ -1,6 +1,6 @@
 # nbspacer
 
-A command line utility that replaces all the appropriate spaces in a HTML document with instances of `&nbsp;`.
+A command line utility that replaces all the appropriate spaces in a HTML document with instances of the character entity `&nbsp;`.
 The main target language is Czech.
 
 ## Features
