@@ -5,18 +5,18 @@ The main target language is Czech.
 
 ## Features
 
-* HTML-aware: only touches the content outside the tags delimited by angle brackets
-* conservative: only changes the necessary characters
-* configurable: choose the transducers or transducer groups you like
+* *HTML-aware*: ignores everything enclosed in angle brackets (namely HTML tags)
+* *conservative*: only modifies the necessary characters
+* *configurable*: choose the transducers or transducer groups you like
 
-While I have tried my best to make the execution of the tool precise and predictable,
-I still recommend checking the result manually as some of the transducers may respond to false positives.
+While I have tried my best to make the results of the tool correct and predictable,
+I still recommend checking the output by hand as some of the transducers may respond to false positives.
 
 ## Limitations
 
-* the input and output file encoding is hardcoded to UTF-8
+* requires [Python](https://www.python.org/)&nbsp;3.5
+* the input and output file encoding is hardcoded to UTF&#8209;8
 * does not skip the content of the tag `<pre>`
-* requires [Python](https://www.python.org/) 3.5
 
 ## Quick start
 
@@ -24,7 +24,7 @@ Call `python3 nbspacer.py --help`.
 
 ## Czech translation
 
-For the Czech translation to work, you must follow these steps:
+To enable the Czech translation, follow these steps:
 
 0. `git submodule update --init`
 (pull the Czech translation of the `argparse` module)
