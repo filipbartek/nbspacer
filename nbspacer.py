@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 """
 :py:mod:`nbspacer` replaces spaces with ``&nbsp;`` in a HTML document where appropriate.
